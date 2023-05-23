@@ -12,19 +12,18 @@ export default (state = initialState, {type, payload}) => {
     
     switch( type ) {
 
-        case ADD_FAV:
-            return {
-
-                ...state,
-                myFavorites: [...state.allCharacters, payload],
-                allCharacters: [...state.allCharacters, payload]
+        case 'ADD_FAV':
+            return { 
+                
+                ...state, 
+                myFavorites: payload, allCharacters: payload 
             }
 
         case REMOVE_FAV:
             return {
 
                 ...state,
-                myFavorites: state.myFavorites.filter(favoritos => favoritos.id !== payload)
+                myFavorites: payload
             }
 
         case FILTER_CARDS:
