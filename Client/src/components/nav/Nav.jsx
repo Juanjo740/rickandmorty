@@ -9,17 +9,12 @@ const Nav = ({onSearch}) => {
         <div className={style.navCont}>
 
             <SearchBar onSearch={onSearch}/>
-            <button>
-                <NavLink to="/about">ABOUT</NavLink>
-            </button>
+            
+            <NavLink className={style.botonStyle} to="/about">ABOUT</NavLink>
+            
+            <NavLink className={style.botonStyle} to="/home">HOME</NavLink>
 
-            <button>
-                <NavLink to="/home">HOME</NavLink>
-            </button>
-
-            <button>
-                <NavLink to="/favorites">FAVORITES</NavLink>
-            </button>
+            <NavLink className={style.botonStyle} to="/favorites">FAVORITES</NavLink>
             
         </div>
 

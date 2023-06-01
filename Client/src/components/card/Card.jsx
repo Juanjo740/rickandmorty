@@ -39,15 +39,15 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
 
          {
             isFav ? (
-               <button onClick={handleFavorite}>❤️</button>
+               <button className={style.favBoton} onClick={handleFavorite}>❤️</button>
             ) : (
-               <button onClick={handleFavorite}>🤍</button>
+               <button className={style.favBoton} onClick={handleFavorite}>🤍</button>
             )
          }
          
-         <button onClick={() => onClose(id)}>X</button>
+         <button className={style.favBoton} onClick={() => onClose(id)}>X</button>
          
-         <NavLink to={`/detail/${id}`}>
+         <NavLink className={style.name} to={`/detail/${id}`}>
             <div className={style.name}><p>{name}</p></div>
          </NavLink>
 

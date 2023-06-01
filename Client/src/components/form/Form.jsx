@@ -1,5 +1,6 @@
 import { useState } from "react";
 import validacion from "../validacion/validacion";
+import style from "./Form.module.css"
 
 const Form = ( { login } ) => {
     
@@ -33,18 +34,23 @@ const Form = ( { login } ) => {
 
 
     return (
+    
+        
+        <form className={style.loginBox} onSubmit={handleSubmit}>
 
-        <form onSubmit={handleSubmit}>
+            <div className={style.userBox}>
+                <input type="text" value={userData.email} name="email" onChange={handleChange}></input>
+                <label htmlFor="email">Email: </label>
+                <div className={style.messageError}>{errors.email !== "" ? <p>{errors.email}</p> : ""}</div>
+            </div>
 
-            <input type="text" value={userData.email} name="email" onChange={handleChange}></input>
-            <label htmlFor="email">email: </label>
-            {errors.email !== "" ? <p>{errors.email}</p> : ""}
+            <div className={style.userBox}>
+                <input type="text" value={userData.password} name="password" onChange={handleChange}></input>
+                <label htmlFor="password">Password: </label>
+                <div className={style.messageError}>{errors.password !== "" ? <p>{errors.password}</p> : ""} </div>
+            </div>
 
-            <input type="text" value={userData.password} name="password" onChange={handleChange}></input>
-            <label htmlFor="password">password: </label>
-            {errors.password !== "" ? <p>{errors.password}</p> : ""}
-
-            <button>submit</button>
+            <button className={style.botonStyle}>Log In</button>
 
         </form>
 
